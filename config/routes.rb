@@ -1,4 +1,10 @@
 TetcoFleet::Application.routes.draw do
+  
+  resources :vehicles, except: [:destroy]
+  
+  root to: 'vehicles#index'
+  
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

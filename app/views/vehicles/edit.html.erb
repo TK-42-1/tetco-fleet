@@ -1,0 +1,7 @@
+Edit vehicle page
+<h1><%= @vehicle.year %> <%= @vehicle.make.upcase %> <%= @vehicle.model.upcase %></h1>
+<%= form_for(@vehicle) do |v| %>
+	<%= render 'shared/error_messages', object: v.object %>
+	<%= render 'vehicle_form', v: v %>
+	<%= render 'details_form', v: v %>
+<% end %>

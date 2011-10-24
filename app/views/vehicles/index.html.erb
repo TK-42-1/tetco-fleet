@@ -1,0 +1,9 @@
+<h1 id="">Vehicles home</h1>
+<h2><%= link_to "Enter New Vehicle", new_vehicle_path %></h2>
+<table>
+<% @vehicles.each do |vehicle| %>
+	<tr>
+		<td><%= link_to vehicle.plate.upcase, vehicle %></td>
+		<td><%= vehicle.year %> <%= vehicle.make.upcase %> <%= vehicle.model.upcase %></td>
+<% end %>
+</table>

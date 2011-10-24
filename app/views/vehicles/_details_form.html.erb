@@ -1,0 +1,23 @@
+<div class="field">
+	<%= v.label :plate %>
+	<%= v.text_field :plate %>
+</div>
+<div class="field">
+	<%= v.label :vin %>
+	<%= v.text_field :vin %>
+</div>
+<div class="field">
+	<%= v.label :milage %>
+	<%= v.text_field :milage %>
+</div>
+<div class="field">
+	<%= v.label :status %>
+	<%= v.select :status, [['Active', 'Active'],['Loaner', 'Loaner'],['Sold', 'Sold'],['Inactive', 'Inactive'],['Wrecked', 'Wrecked']] %>
+</div>
+<div class="field">
+	<%= v.label :driver_id %>
+	<%= v.text_field :driver_id %>
+</div>
+<div class="actions">
+	<%= v.submit "Submit" %>
+</div>

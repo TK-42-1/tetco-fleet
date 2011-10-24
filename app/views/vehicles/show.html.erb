@@ -1,0 +1,9 @@
+<h1><%= @vehicle.year %> <%= @vehicle.make.upcase %> <%= @vehicle.model.upcase %></h1>
+
+<%= link_to "Edit vehicle", edit_vehicle_path(@vehicle) %><br>
+
+Plate: <%= @vehicle.plate.upcase%></br>
+VIN: <%= @vehicle.vin.upcase %></br>
+Milage: <%= @vehicle.milage %></br>
+Status: <%= @vehicle.status %></br>
+Driver: <%= @vehicle.driver_id %>
