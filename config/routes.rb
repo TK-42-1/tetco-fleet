@@ -1,5 +1,11 @@
 TetcoFleet::Application.routes.draw do
   
+  get "pages/home"
+
+  get "pages/search"
+
+  get "pages/reports"
+
   resources :drivers
 
   resources :work_orders

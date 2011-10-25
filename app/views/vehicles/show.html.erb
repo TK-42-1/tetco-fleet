@@ -9,7 +9,11 @@
 </p>
 <p>
   <b>Milage:</b>
+	<% if @vehicle.work_orders.last.nil? %>
+	<%= @vehicle.milage %>
+	<% else %>
   <%= @vehicle.work_orders.last.milage %>
+	<% end %>
 </p>
 <p>
   <b>Status:</b>
