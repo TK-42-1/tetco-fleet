@@ -5,3 +5,53 @@
  *= require_self
  *= require_tree . 
 */
+
+.container {
+	width: 800px;
+}
+
+/* header styling */
+header {
+	padding-top: 20px;
+	margin-left: 20px;
+	padding-right: 20px;
+}
+
+header img {
+	padding: 2px;
+	background: #000;
+}
+
+.sidebar {
+	position: fixed;
+	top: 145px;
+	right: 20px;
+	background: #fff;
+	border-style: solid;
+	border-color: #000;	
+}
+
+.sidebar tr {
+	text-decoration: none;
+}
+
+.sidebar a {
+	text-decoration: none;
+	font-weight: bold;
+	padding-left: 20px;
+	padding-right: 20px;
+	color: #000;	
+}
+
+.sidebar a:visited {
+	color: #000;
+}
+
+.sidebar a:hover {
+	color: #fff;
+	background: #000;
+}
+
+.sidebar a:visited:hover {
+	color: #fff;
+}
