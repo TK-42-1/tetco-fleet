@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.0'
-gem 'sqlite3'
+gem 'sqlite3', group: :development
 gem 'will_paginate', '~> 3.0.pre4'
 gem "rake", "0.9.2"
 gem 'rack', '1.3.3'
