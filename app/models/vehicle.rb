@@ -18,12 +18,23 @@
 class Vehicle < ActiveRecord::Base
   attr_accessible :plate, :status, :vin, :make, :model, :year, :driver_id, :milage
   
+  belongs_to :driver
+  has_many :work_orders
+  
   make_regex = /[a-z]*/i
   
   validates :vin, :length => {:is => 17}
   validates :plate, :length => { :minimum => 5, :maximum => 7 }, :allow_nil => false
   validates :make, :model, :status, :presence => true
   validates_length_of :year, :is => 4
+
+  def vehicle_name
+    "#{year} #{make} #{model}"
+  end
+  
+  def oldest
+    select("inv_date", order_by(DESC), limit(1))
+  end
 end
 
 

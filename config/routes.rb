@@ -1,5 +1,9 @@
 TetcoFleet::Application.routes.draw do
   
+  resources :drivers
+
+  resources :work_orders
+
   resources :vehicles, except: [:destroy]
   
   root to: 'vehicles#index'

@@ -1,9 +1,19 @@
 <h1 id="">Vehicles home</h1>
 <h2><%= link_to "Enter New Vehicle", new_vehicle_path %></h2>
 <table>
+	<tr>
+		<th>Plate</th>
+		<th>Year</th>
+		<th>Make</th>
+		<th>Model</th>
+		<th></th>
+	</tr>
 <% @vehicles.each do |vehicle| %>
 	<tr>
 		<td><%= link_to vehicle.plate.upcase, vehicle %></td>
-		<td><%= vehicle.year %> <%= vehicle.make.upcase %> <%= vehicle.model.upcase %></td>
+		<td><%= vehicle.year %></td>
+		<td><%= vehicle.make.upcase %></td> 
+		<td><%= vehicle.model.upcase %></td>
+		<td><%= link_to 'Edit', edit_vehicle_path(vehicle) %></td>
 <% end %>
 </table>

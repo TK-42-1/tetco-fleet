@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Vehicle:</b>
+  <%= link_to @work_order.vehicle.vehicle_name, @work_order.vehicle %>
+</p>
+
+<p>
+  <b>Invoice:</b>
+  <%= @work_order.invoice %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @work_order.inv_date %>
+</p>
+
+<p>
+  <b>Milage:</b>
+  <%= @work_order.milage %>
+</p>
+
+<p>
+  <b>Cost:</b>
+  $<%= @work_order.cost %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @work_order.category %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @work_order.description %>
+</p>
+
+<p>
+  <b>Serviced by:</b>
+  <%= @work_order.serviced %>
+</p>
+
+
+<%= link_to 'Edit', edit_work_order_path(@work_order) %> |
+<%= link_to 'Delete', @work_order, confirm: 'Are you sure?', method: :delete %> | 
+<%= link_to 'Back', work_orders_path %>

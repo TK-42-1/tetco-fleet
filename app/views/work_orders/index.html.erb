@@ -1,0 +1,32 @@
+<h1>Work Orders</h1>
+<h2><%= link_to "Enter New Work Order", new_work_order_path %></h2>
+
+<table>
+  <tr>
+    <th>Invoice</th>
+    <th>Date</th>
+    <th>Vehicle</th>
+    <th>Milage</th>
+    <th>Cost</th>
+    <th>Category</th>
+    <th>Description</th>
+    <th>Serviced</th>
+    <th></th>
+  </tr>
+
+<% @work_orders.each do |work_order| %>
+  <tr>
+    <td><%= link_to work_order.invoice, work_order %></td>
+    <td><%= work_order.inv_date %></td>
+    <td><%= link_to work_order.vehicle.vehicle_name, work_order.vehicle %></td>
+    <td><%= work_order.milage %></td>
+    <td><%= work_order.cost %></td>
+    <td><%= work_order.category %></td>
+    <td><%= work_order.description %></td>
+    <td><%= work_order.serviced %></td>
+    <td><%= link_to 'Edit', edit_work_order_path(work_order) %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />

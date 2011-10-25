@@ -1,9 +1,25 @@
 <h1><%= @vehicle.year %> <%= @vehicle.make.upcase %> <%= @vehicle.model.upcase %></h1>
+<p>
+  <b>Plate:</b>
+  <%= @vehicle.plate.upcase%>
+</p>
+<p>
+  <b>VIN:</b>
+  <%= @vehicle.vin.upcase %>
+</p>
+<p>
+  <b>Milage:</b>
+  <%= @vehicle.work_orders.last.milage %>
+</p>
+<p>
+  <b>Status:</b>
+  <%= @vehicle.status %>
+</p>
+<p>
+  <b>Current Driver:</b>
+  <%= link_to @vehicle.driver.full_name, @vehicle.driver %>
+</p>
 
-<%= link_to "Edit vehicle", edit_vehicle_path(@vehicle) %><br>
-
-Plate: <%= @vehicle.plate.upcase%></br>
-VIN: <%= @vehicle.vin.upcase %></br>
-Milage: <%= @vehicle.milage %></br>
-Status: <%= @vehicle.status %></br>
-Driver: <%= @vehicle.driver_id %>
+<%= link_to 'Edit', edit_vehicle_path(@vehicle) %> |
+<%= link_to 'Delete', @vehicle, confirm: 'Are you sure?', method: :delete %> | 
+<%= link_to 'Back', vehicles_path %>

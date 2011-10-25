@@ -1,0 +1,19 @@
+<h1>Drivers</h1>
+<h2><%= link_to 'Enter New Driver', new_driver_path %></h2>
+<table>
+  <tr>
+    <th>Name</th>
+		<th></th>
+  </tr>
+
+<% @drivers.each do |driver| %>
+  <tr>
+    <td><%= link_to "#{driver.fname} #{driver.lname}", driver %></td>
+    <td><%= link_to 'Edit', edit_driver_path(driver) %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+
