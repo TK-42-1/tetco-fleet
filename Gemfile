@@ -16,6 +16,10 @@ end
 
 gem 'jquery-rails'
 
+group :production do
+  gem 'pg'
+end
+
 group :development do
   gem 'rspec-rails', '~> 2.6.1'
   gem 'annotate', '~> 2.4.0'
