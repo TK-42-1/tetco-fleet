@@ -1,8 +1,8 @@
 class VehiclesController < ApplicationController
-  
+  helper_method :sort_column, :sort_direction
   def index
     @title = "Vehicle Manager"
-    @vehicles = Vehicle.all
+    @vehicles = Vehicle.search(params[:search]).order(sort_column + " " + sort_direction).paginate(per_page: 25, page: params[:page])
   end
   
   def new
@@ -38,5 +38,15 @@ class VehiclesController < ApplicationController
       @title = "Edit Vehicle"
       render 'edit'
     end
+  end
+  
+  private
+  
+  def sort_column
+    Vehicle.column_names.include?(params[:sort]) ? params[:sort] : "plate"
+  end
+  
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"   
   end
 end

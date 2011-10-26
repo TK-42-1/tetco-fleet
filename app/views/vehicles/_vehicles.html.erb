@@ -1,0 +1,20 @@
+<%= hidden_field_tag :direction, params[:direction] %>
+<%= hidden_field_tag :sort, params[:sort] %>
+<table class="search">
+	<tr>
+		<th><%= sortable "plate" %></th>
+		<th><%= sortable "year" %></th>
+		<th><%= sortable "make" %></th>
+		<th><%= sortable "model" %></th>
+		<th></th>
+	</tr>
+<% @vehicles.each do |vehicle| %>
+	<tr>
+		<td><%= link_to vehicle.plate.upcase, vehicle %></td>
+		<td><%= vehicle.year %></td>
+		<td><%= vehicle.make.upcase %></td> 
+		<td><%= vehicle.model.upcase %></td>
+		<td><%= link_to 'Edit', edit_vehicle_path(vehicle) %></td>
+<% end %>
+</table>
+<%= will_paginate @vehicles %>

@@ -55,3 +55,17 @@ header img {
 .sidebar a:visited:hover {
 	color: #fff;
 }
+
+.search th .current {
+  padding-right: 12px;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+.search th .asc {
+  background-image: url(up_arrow.gif);
+}
+
+.search th .desc {
+  background-image: url(down_arrow.gif);
+}

@@ -35,6 +35,14 @@ class Vehicle < ActiveRecord::Base
   def oldest
     select("inv_date", order_by(DESC), limit(1))
   end
+  
+  def self.search(search)
+    if search
+       where('make LIKE ?', "%#{search}%")
+    else
+     scoped
+    end
+  end
 end
 
 
