@@ -38,9 +38,9 @@ class Vehicle < ActiveRecord::Base
   
   def self.search(search)
     if search
-       where('make LIKE ?', "%#{search}%")
+      where('make LIKE ?', "%#{search}%")
     else
-     scoped
+      scoped
     end
   end
 end

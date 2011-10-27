@@ -2,10 +2,13 @@
 <h2><%= link_to "Enter New Vehicle", new_vehicle_path %></h2>
 
 <%= form_tag vehicles_path, method: 'get', id: "vehicles_search"  do %>
-
-	<p>
-		<%= text_field_tag :search, params[:search] %>
-		<%= submit_tag "Search", name: nil %>
-	</p>
+	<table>
+		<tr>
+			<td>Make</td>
+		</tr>
+		<tr>
+			<td><%= text_field_tag :search, params[:search] %></td>
+		</tr>	
+	</table>
 	<div id="vehicles"><%= render 'vehicles' %></div>
 <% end %>

@@ -2,7 +2,12 @@ class VehiclesController < ApplicationController
   helper_method :sort_column, :sort_direction
   def index
     @title = "Vehicle Manager"
-    @vehicles = Vehicle.search(params[:search]).order(sort_column + " " + sort_direction).paginate(per_page: 25, page: params[:page])
+    @search   = Vehicle.search(params[:search]).order(sort_column + " " + sort_direction).paginate(per_page: 25, page: params[:page])
+    if @search.size.zero?
+      @vehicles = Vehicle.new(params[plate: "No Results"])
+    else
+      @vehicles = @search
+    end
   end
   
   def new
